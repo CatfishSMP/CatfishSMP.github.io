@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catfish SMP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🐟 Catfish SMP</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#rules">Rules</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to Catfish SMP!</h1>
+    <p>Survive, build, and explore with friends on our community Minecraft server.</p>
+    <a href="#join" class="btn">Join Now</a>
+  </section>
+
+  <section id="about">
+    <h2>About Catfish SMP</h2>
+    <p>Catfish SMP is a friendly Minecraft SMP server where players can build amazing worlds, trade, and explore together. We value community and creativity!</p>
+  </section>
+
+  <section id="rules">
+    <h2>Server Rules</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Respect</h3>
+        <p>Treat all players kindly. No bullying or harassment.</p>
+      </div>
+      <div class="card">
+        <h3>No Griefing</h3>
+        <p>Do not destroy or steal from other players' builds.</p>
+      </div>
+      <div class="card">
+        <h3>No Cheats</h3>
+        <p>Use only vanilla gameplay. No hacking or exploits.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <h2>Join the Server</h2>
+    <p>IP: <strong>catfishsmp.falixsrv.me</strong></p>
+    <p>Port: <strong>32227</strong></p>
+    <a href="#" class="btn">Connect in Minecraft</a>
+    <div class="server-status">
+      <p>Status: <span id="status">Checking...</span></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Catfish SMP. Made with ❤️ by the community.</p>
+  </footer>
+
+  <script>
+    // Simple fake server status
+    setTimeout(() => {
+      const status = document.getElementById('status');
+      status.textContent = "Online ✅";
+      status.style.color = "#4CAF50";
+    }, 1000);
+  </script>
+</body>
+</html>
