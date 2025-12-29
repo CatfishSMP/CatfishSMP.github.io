@@ -56,7 +56,6 @@
             font-weight: bold;
             font-size: 0.9rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.5s;
         }
 
         .dot {
@@ -68,11 +67,7 @@
             margin-right: 8px;
         }
 
-        .online .dot { 
-            background-color: #00ff00; 
-            box-shadow: 0 0 12px #00ff00; 
-            animation: pulse 2s infinite;
-        }
+        .online .dot { background-color: #00ff00; box-shadow: 0 0 12px #00ff00; animation: pulse 2s infinite; }
         .offline .dot { background-color: #ff4444; box-shadow: 0 0 12px #ff4444; }
 
         @keyframes pulse {
@@ -86,35 +81,62 @@
 
         .card {
             background-color: #121c12;
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             border: 1px solid #2e7d32;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
         }
 
-        h2 { margin-top: 0; margin-bottom: 20px; color: #a5d6a7; text-transform: uppercase; border-bottom: 2px solid #2e7d32; padding-bottom: 10px; }
+        h2 { margin-top: 0; margin-bottom: 15px; color: #a5d6a7; text-transform: uppercase; border-bottom: 2px solid #2e7d32; padding-bottom: 10px; }
 
         .info-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #0a0f0a;
-            padding: 12px;
+            padding: 15px;
             border-radius: 8px;
             border: 1px solid #1b5e20;
             margin-bottom: 12px;
         }
 
         .info-text { text-align: left; }
-        .label { font-size: 0.75rem; color: #81c784; text-transform: uppercase; }
-        .value { font-family: monospace; font-weight: bold; }
-
-        .copy-btn { background: #1b5e20; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+        .label { font-size: 0.8rem; color: #81c784; text-transform: uppercase; margin-bottom: 3px; display: block; }
         
+        /* BIGGER TEXT FOR IP/PORT */
+        .value { font-family: 'Courier New', monospace; font-weight: bold; font-size: 1.25rem; word-break: break-all; }
+
+        .recommended {
+            font-size: 0.7rem;
+            background: #ffd700;
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .copy-btn { background: #1b5e20; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        
+        /* ADJUSTED BUTTON TO FIT BOX */
         .action-btn {
-            display: block; width: 100%; padding: 14px; background: linear-gradient(to right, #2e7d32, #43a047);
-            color: white; text-decoration: none; border-radius: 8px; font-weight: bold; text-align: center; text-transform: uppercase; margin-top: 10px;
+            display: block; 
+            width: 100%; 
+            padding: 12px 10px; 
+            background: linear-gradient(to right, #2e7d32, #43a047);
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-align: center; 
+            text-transform: uppercase; 
+            margin-top: auto; /* Pushes button to bottom of card */
+            font-size: 0.9rem;
+            box-sizing: border-box;
         }
 
         .start-btn { background: linear-gradient(to right, #f57f17, #fbc02d); color: #000; max-width: 320px; margin: 15px auto 0; }
@@ -145,11 +167,17 @@
         <div class="card">
             <h2>Bedrock</h2>
             <div class="info-row">
-                <div class="info-text"><span class="label">IP</span><br><span class="value" id="b-ip">catfishsmp.falixsrv.me</span></div>
+                <div class="info-text">
+                    <span class="label">Server IP</span>
+                    <span class="value" id="b-ip">catfishsmp.falixsrv.me</span>
+                </div>
                 <button class="copy-btn" onclick="copy('b-ip')">Copy</button>
             </div>
             <div class="info-row">
-                <div class="info-text"><span class="label">Port</span><br><span class="value" id="b-port">32227</span></div>
+                <div class="info-text">
+                    <span class="label">Port</span>
+                    <span class="value" id="b-port">32227</span>
+                </div>
                 <button class="copy-btn" onclick="copy('b-port')">Copy</button>
             </div>
             <a href="minecraft://externalServer?name=CatfishSMP&serverAddress=catfishsmp.falixsrv.me&port=32227" class="action-btn">
@@ -160,11 +188,17 @@
         <div class="card">
             <h2>Java</h2>
             <div class="info-row">
-                <div class="info-text"><span class="label">IP</span><br><span class="value" id="j-ip">catfishsmp.falixsrv.me</span></div>
+                <div class="info-text">
+                    <span class="label">IP <span class="recommended">Recommended</span></span>
+                    <span class="value" id="j-ip">catfishsmp.falixsrv.me</span>
+                </div>
                 <button class="copy-btn" onclick="copy('j-ip')">Copy</button>
             </div>
             <div class="info-row">
-                <div class="info-text"><span class="label">Full IP</span><br><span class="value" id="j-full">catfishsmp.falixsrv.me:32227</span></div>
+                <div class="info-text">
+                    <span class="label">Full IP (Direct)</span>
+                    <span class="value" id="j-full">catfishsmp.falixsrv.me:32227</span>
+                </div>
                 <button class="copy-btn" onclick="copy('j-full')">Copy</button>
             </div>
         </div>
