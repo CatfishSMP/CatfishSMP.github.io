@@ -105,7 +105,6 @@
 
         .info-text { text-align: left; }
         .label { font-size: 0.8rem; color: #81c784; text-transform: uppercase; margin-bottom: 3px; display: block; }
-        
         .value { font-family: 'Courier New', monospace; font-weight: bold; font-size: 1.25rem; word-break: break-all; }
 
         .recommended {
@@ -122,19 +121,8 @@
         .copy-btn { background: #1b5e20; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold; }
         
         .action-btn {
-            display: block; 
-            width: 100%; 
-            padding: 12px 10px; 
-            background: linear-gradient(to right, #2e7d32, #43a047);
-            color: white; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            text-align: center; 
-            text-transform: uppercase; 
-            margin-top: auto; 
-            font-size: 0.9rem;
-            box-sizing: border-box;
+            display: block; width: 100%; padding: 12px 10px; background: linear-gradient(to right, #2e7d32, #43a047);
+            color: white; text-decoration: none; border-radius: 8px; font-weight: bold; text-align: center; text-transform: uppercase; margin-top: auto; font-size: 0.9rem; box-sizing: border-box;
         }
 
         .start-btn { background: linear-gradient(to right, #f57f17, #fbc02d); color: #000; max-width: 320px; margin: 15px auto 0; }
@@ -150,7 +138,7 @@
         .warning { color: #ffca28; font-size: 0.85rem; font-style: italic; display: block; margin-top: 10px; text-align: center; }
     </style>
 </head>
-<body onload="checkServerStatus()">
+<body>
 
 <div class="container">
     
@@ -254,8 +242,8 @@
         });
     }
 
-    // Checking status with your direct numeric IP
     function checkServerStatus() {
+        // Numeric IP used for the API call only
         const secretIp = "46.224.111.26";
         const secretPort = "32227";
         const statusText = document.getElementById('status-text');
@@ -274,13 +262,16 @@
                 }
             })
             .catch(err => {
-                statusText.innerText = 'Status Offline';
+                statusText.innerText = 'Server Offline';
                 statusBadge.classList.add('offline');
             });
     }
 
-    // Refresh every 30 seconds
-    setInterval(checkServerStatus, 30000);
+    // Run immediately when HTML is parsed
+    document.addEventListener('DOMContentLoaded', () => {
+        checkServerStatus(); // First check
+        setInterval(checkServerStatus, 30000); // Repeat check
+    });
 </script>
 
 </body>
