@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catfish SMP</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Clipboard icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -25,26 +25,27 @@
       <!-- Bedrock Edition -->
       <div class="server-box bedrock">
         <h2>Bedrock Edition</h2>
-        <div class="bedrock-info">
-          <p>IP: <span class="copy-text" id="bedrock-ip">catfishsmp.falixsrv.me</span> 
-            <button class="copy-btn" onclick="copyText('bedrock-ip')">Copy</button>
-          </p>
-          <p>Port: <span class="copy-text" id="bedrock-port">32227</span> 
-            <button class="copy-btn" onclick="copyText('bedrock-port')">Copy</button>
-          </p>
-          <a href="minecraft://" class="btn">Join</a>
-        </div>
+        <p>IP: <span class="copy-text" id="bedrock-ip">catfishsmp.falixsrv.me</span> 
+          <button class="copy-btn" onclick="copyText('bedrock-ip')">Copy</button>
+        </p>
+        <p>Port: <span class="copy-text" id="bedrock-port">32227</span> 
+          <button class="copy-btn" onclick="copyText('bedrock-port')">Copy</button>
+        </p>
+        <a href="minecraft://" class="btn">Join</a>
       </div>
 
       <!-- Java Edition -->
       <div class="server-box java">
         <h2>Java Edition</h2>
+        <p class="recommended">recommended</p>
         <p>IP: <span class="copy-text" id="java-ip">catfishsmp.falixsrv.me</span> 
           <button class="copy-btn" onclick="copyText('java-ip')">Copy</button>
         </p>
-        <p class="recommended">recommended</p>
         <p>Full IP: <span class="copy-text" id="java-full-ip">catfishsmp.falixsrv.me:32227</span> 
           <button class="copy-btn" onclick="copyText('java-full-ip')">Copy</button>
+        </p>
+        <p>Port: <span class="copy-text" id="java-port">32227</span> 
+          <button class="copy-btn" onclick="copyText('java-port')">Copy</button>
         </p>
       </div>
 
@@ -57,7 +58,6 @@
   </footer>
 
   <script>
-    // Copy to clipboard function
     function copyText(elementId) {
       const text = document.getElementById(elementId).textContent;
       navigator.clipboard.writeText(text).then(() => {
