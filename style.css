@@ -23,14 +23,18 @@ body {
   text-align: center;
 }
 
-/* Title Card */
+/* Title Card Wrapper */
+.title-card-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
 .title-card {
   background: rgba(0,0,0,0.8);
-  display: inline-block;
-  padding: 20px 40px;
-  border-radius: 12px;
-  margin: 30px auto 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  padding: 25px 50px;
+  border-radius: 16px;
+  box-shadow: 5px 5px #000;
 }
 
 .title-card h1 {
