@@ -10,13 +10,12 @@
 :root {
   --primary: #4CAF50;
   --secondary: #FFD700;
-  --bg-dark: #1e1e1e;
-  --section-bg: rgba(30, 30, 30, 0.85);
+  --section-bg: rgba(0,0,0,0.7);
 }
 
-/* Body */
+/* Body with green gradient */
 body {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background: linear-gradient(135deg, #1b5e20, #4caf50, #a5d6a7);
   color: #f0f0f0;
   line-height: 1.6;
 }
@@ -29,7 +28,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.85);
   border-bottom: 3px solid var(--primary);
   z-index: 1000;
 }
@@ -56,7 +55,7 @@ header nav a:hover {
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: rgba(0,0,0,0.8);
+  background: var(--section-bg);
   border-radius: 12px;
   margin: 20px;
 }
@@ -106,7 +105,7 @@ section {
 
 .rule-card {
   flex: 1 1 250px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -117,20 +116,11 @@ section {
   margin-bottom: 10px;
 }
 
-/* Server Status */
-.server-status {
-  margin-top: 15px;
-  padding: 10px;
-  background: rgba(0,0,0,0.5);
-  border-radius: 8px;
-  text-align: center;
-}
-
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.85);
   border-top: 3px solid var(--primary);
   margin-top: 50px;
 }
