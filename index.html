@@ -63,15 +63,15 @@
 
   <!-- Footer -->
   <footer>
-    <p>Catfish SMP Website.</p>
+    <p>Catfish SMP website</p>
   </footer>
 
   <script>
-    // Simple fake server status
+    // Simulate server check
     setTimeout(() => {
       const status = document.getElementById('status');
-      status.textContent = "Online ✅";
-      status.style.color = "#4CAF50";
+      // Change this to check real server if possible; currently always shows custom message
+      status.innerHTML = 'If the server is not online, <a href="https://falixnodes.net/startserver?ip=catfishsmp.falixsrv.me" target="_blank" style="color:#FFD700; text-decoration: underline;">start it yourself here</a>';
     }, 1000);
   </script>
 
