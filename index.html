@@ -43,8 +43,8 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* Grid for Edition Cards */
-        .cards-grid {
+        /* Card Layouts */
+        .cards-grid, .tutorial-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
@@ -52,13 +52,13 @@
         }
         
         @media (min-width: 768px) {
-            .cards-grid {
+            .cards-grid, .tutorial-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
         /* Card Styling */
-        .server-card, .status-card, .rules-card {
+        .server-card, .status-card, .rules-card, .tutorial-card {
             background-color: #121c12;
             padding: 25px;
             border-radius: 12px;
@@ -70,11 +70,6 @@
             margin-bottom: 20px;
         }
 
-        .server-card:hover {
-            border-color: #00e676;
-            transition: 0.3s;
-        }
-
         h2 {
             margin: 0;
             border-bottom: 2px solid #2e7d32;
@@ -84,33 +79,44 @@
             font-size: 1.5rem;
         }
 
-        /* Rules List Styling */
+        /* Tutorial/Rules Text Styling */
+        .guide-text {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #e8f5e9;
+        }
+
+        .guide-text ol {
+            padding-left: 20px;
+        }
+
+        .guide-text li {
+            margin-bottom: 8px;
+        }
+
         .rules-list {
             text-align: left;
             list-style-type: none;
-            padding: 10px;
-            margin: 0 auto;
+            padding: 0;
             display: grid;
             grid-template-columns: 1fr;
             gap: 10px;
         }
 
         @media (min-width: 600px) {
-            .rules-list {
-                grid-template-columns: 1fr 1fr; /* Split rules into two columns on desktop */
-            }
+            .rules-list { grid-template-columns: 1fr 1fr; }
         }
 
         .rules-list li {
-            font-size: 1rem;
-            color: #e8f5e9;
+            font-size: 0.95rem;
             background: rgba(46, 125, 50, 0.1);
             padding: 8px 12px;
             border-radius: 6px;
             border-left: 4px solid #00e676;
         }
 
-        /* Info Groups */
+        /* Info Groups for IP/Port */
         .info-group {
             background-color: #0a0f0a;
             padding: 10px;
@@ -143,10 +149,7 @@
             padding: 6px 12px;
             border-radius: 5px;
             cursor: pointer;
-            transition: 0.2s;
         }
-
-        .copy-btn:hover { background-color: #2e7d32; }
 
         .action-btn {
             display: inline-block;
@@ -157,7 +160,6 @@
             border-radius: 8px;
             font-weight: bold;
             text-transform: uppercase;
-            transition: 0.2s;
             border: 1px solid #66bb6a;
         }
 
@@ -165,7 +167,6 @@
             background: linear-gradient(to right, #f57f17, #fbc02d);
             border: 1px solid #fdd835;
             color: #000;
-            margin-top: 10px;
             width: fit-content;
             align-self: center;
             padding: 12px 30px;
@@ -174,7 +175,6 @@
         .warning-text {
             font-size: 0.85rem;
             color: #ffca28;
-            margin-top: 8px;
             font-style: italic;
         }
     </style>
@@ -237,6 +237,33 @@
                 <li>No X-Ray</li>
                 <li>No Hacking Texture Packs</li>
             </ul>
+        </div>
+
+        <div class="tutorial-card">
+            <h2>How to Join</h2>
+            <div class="tutorial-grid">
+                <div class="guide-text">
+                    <h3>Bedrock (Mobile/Console/PC)</h3>
+                    <ol>
+                        <li>Open Minecraft and click <b>Play</b>.</li>
+                        <li>Go to the <b>Servers</b> tab.</li>
+                        <li>Scroll down and click <b>Add Server</b>.</li>
+                        <li>Enter <b>Catfish SMP</b> as the name.</li>
+                        <li>Enter the IP and Port shown above.</li>
+                        <li>Click <b>Save & Play</b>!</li>
+                    </ol>
+                </div>
+                <div class="guide-text">
+                    <h3>Java Edition (PC)</h3>
+                    <ol>
+                        <li>Open Minecraft and click <b>Multiplayer</b>.</li>
+                        <li>Click <b>Add Server</b> or <b>Direct Connection</b>.</li>
+                        <li>Enter <b>Catfish SMP</b> as the name.</li>
+                        <li>Paste the <b>Recommended IP</b> into the Server Address box.</li>
+                        <li>Click <b>Done</b> and join the server!</li>
+                    </ol>
+                </div>
+            </div>
         </div>
 
         <div class="status-card">
