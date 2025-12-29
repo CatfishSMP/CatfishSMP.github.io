@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Minecraft', 'Courier New', monospace;
 }
 
 /* Colors */
@@ -25,16 +25,18 @@ body {
 
 /* Title Card */
 .title-card {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.8);
   display: inline-block;
   padding: 20px 40px;
   border-radius: 12px;
   margin: 30px auto 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .title-card h1 {
   font-size: 3rem;
   color: var(--primary);
+  text-shadow: 2px 2px #000;
 }
 
 /* Server Boxes */
@@ -42,7 +44,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   margin: 40px 20px;
 }
 
@@ -52,11 +54,20 @@ body {
   border-radius: 12px;
   width: 300px;
   text-align: center;
+  border: 4px solid #000;
+  box-shadow: 4px 4px #000;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.server-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px #000;
 }
 
 .server-box h2 {
   color: var(--primary);
   margin-bottom: 15px;
+  text-shadow: 1px 1px #000;
 }
 
 .server-box p {
@@ -69,7 +80,7 @@ body {
 
 .server-box .recommended {
   font-size: 0.9rem;
-  color: #FFD700;
+  color: var(--secondary);
   margin: 0 0 10px 0;
 }
 
@@ -85,12 +96,13 @@ body {
 
 .server-box .btn {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 6px;
   background: var(--btn-bg);
   color: #fff;
   text-decoration: none;
+  font-weight: bold;
   transition: background 0.3s;
 }
 
@@ -105,6 +117,7 @@ footer {
   padding: 20px;
   background: rgba(0,0,0,0.85);
   border-top: 3px solid var(--primary);
+  font-weight: bold;
 }
 
 /* Responsive */
