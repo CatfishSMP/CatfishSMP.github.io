@@ -25,18 +25,27 @@
       <!-- Bedrock Edition -->
       <div class="server-box bedrock">
         <h2>Bedrock Edition</h2>
-        <p>IP: <span class="copy-text" id="bedrock-ip">catfishsmp.falixsrv.me</span> <i class="fas fa-clipboard" onclick="copyText('bedrock-ip')"></i></p>
-        <p>Port: <span class="copy-text" id="bedrock-port">32227</span> <i class="fas fa-clipboard" onclick="copyText('bedrock-port')"></i></p>
-        <a href="minecraft://" class="btn">Join Minecraft Bedrock</a>
+        <div class="bedrock-info">
+          <p>IP: <span class="copy-text" id="bedrock-ip">catfishsmp.falixsrv.me</span> 
+            <button class="copy-btn" onclick="copyText('bedrock-ip')">Copy</button>
+          </p>
+          <p>Port: <span class="copy-text" id="bedrock-port">32227</span> 
+            <button class="copy-btn" onclick="copyText('bedrock-port')">Copy</button>
+          </p>
+          <a href="minecraft://" class="btn">Join</a>
+        </div>
       </div>
 
       <!-- Java Edition -->
       <div class="server-box java">
         <h2>Java Edition</h2>
-        <p>IP: <span class="copy-text" id="java-ip">catfishsmp.falixsrv.me</span> <i class="fas fa-clipboard" onclick="copyText('java-ip')"></i></p>
+        <p>IP: <span class="copy-text" id="java-ip">catfishsmp.falixsrv.me</span> 
+          <button class="copy-btn" onclick="copyText('java-ip')">Copy</button>
+        </p>
         <p class="recommended">recommended</p>
-        <p>Full IP: <span class="copy-text" id="java-full-ip">catfishsmp.falixsrv.me:32227</span> <i class="fas fa-clipboard" onclick="copyText('java-full-ip')"></i></p>
-        <p>Port: <span class="copy-text" id="java-port">32227</span> <i class="fas fa-clipboard" onclick="copyText('java-port')"></i></p>
+        <p>Full IP: <span class="copy-text" id="java-full-ip">catfishsmp.falixsrv.me:32227</span> 
+          <button class="copy-btn" onclick="copyText('java-full-ip')">Copy</button>
+        </p>
       </div>
 
     </div>
