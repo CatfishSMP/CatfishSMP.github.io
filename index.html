@@ -28,14 +28,23 @@
 
         .container { max-width: 900px; width: 100%; }
 
+        /* LARGER TITLE */
         .title-card {
             background: linear-gradient(135deg, #2e7d32, #00e676);
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             border-radius: 15px;
             margin-bottom: 30px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             border: 1px solid #4caf50;
+        }
+
+        .title-card h1 {
+            margin: 0;
+            font-size: 4.5rem; /* Increased Size */
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.4);
         }
 
         .discord-btn {
@@ -62,8 +71,7 @@
             border-radius: 15px;
             border: 1px solid #2e7d32;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            display: flex;
-            flex-direction: column;
+            margin-bottom: 25px;
             transition: 0.3s;
         }
 
@@ -96,7 +104,29 @@
 
         .copy-btn.copied { background: #00e676; color: #000; }
 
-        /* VIDEO & TUTORIAL STYLES */
+        /* CENTERED BEDROCK BUTTON */
+        .bedrock-link-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .action-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(to right, #2e7d32, #43a047);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .action-btn:hover { filter: brightness(1.2); transform: scale(1.02); }
+
         .yt-btn {
             display: block;
             width: 100%;
@@ -127,22 +157,20 @@
             top: 0; left: 0; width: 100%; height: 100%;
         }
 
-        .tutorial-columns {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            text-align: left;
-        }
-        @media (min-width: 600px) { .tutorial-columns { grid-template-columns: 1fr 1fr; } }
-
-        ol { padding-left: 20px; line-height: 1.6; font-size: 0.95rem; }
-
-        .action-btn {
-            display: block; width: 100%; padding: 12px; background: linear-gradient(to right, #2e7d32, #43a047);
-            color: white; text-decoration: none; border-radius: 8px; font-weight: bold; text-align: center; margin-top: auto;
+        .rule-item { 
+            background: rgba(46, 125, 50, 0.15); 
+            padding: 10px 15px; 
+            border-radius: 8px; 
+            border-left: 4px solid #00e676; 
+            margin-bottom: 10px;
+            font-weight: 500;
         }
 
-        .start-btn { background: linear-gradient(to right, #f57f17, #fbc02d); color: #000; max-width: 320px; margin: 15px auto 0; }
+        .start-btn { 
+            background: linear-gradient(to right, #f57f17, #fbc02d); 
+            color: #000; 
+            margin: 15px auto 0;
+        }
     </style>
 </head>
 <body>
@@ -164,7 +192,9 @@
                 <div><small>Port</small><br><span class="value" id="b-port">56048</span></div>
                 <button class="copy-btn" onclick="copyText('b-port', this)">Copy</button>
             </div>
-            <a href="minecraft://externalServer?name=CatfishSMP&serverAddress=catfishsmp.falixsrv.me&port=56048" class="action-btn">Open Minecraft Bedrock</a>
+            <div class="bedrock-link-container">
+                <a href="minecraft://externalServer?name=CatfishSMP&serverAddress=catfishsmp.falixsrv.me&port=56048" class="action-btn">Open Minecraft Bedrock</a>
+            </div>
         </div>
 
         <div class="card">
@@ -182,35 +212,34 @@
 
     <div class="card">
         <h2>How to Join</h2>
-        
         <button class="yt-btn" onclick="toggleVideo(this)">▶ Watch Video Tutorial</button>
-        
         <div id="video-box" class="video-wrapper">
             <iframe id="yt-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-
-        <div class="tutorial-columns">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
             <div>
                 <h3>Java Edition</h3>
-                <ol>
-                    <li>Go to <b>Multiplayer</b>.</li>
-                    <li>Click <b>Add Server</b>.</li>
-                    <li>Enter the IP and Port provided above.</li>
-                </ol>
+                <p>Multiplayer > Add Server > Enter IP.</p>
             </div>
             <div>
                 <h3>Bedrock / Mobile</h3>
-                <ol>
-                    <li>Go to <b>Servers</b>.</li>
-                    <li>Scroll down and click <b>Add Server</b>.</li>
-                    <li>Enter the IP and Port <b>56048</b>.</li>
-                </ol>
+                <p>Servers > Add Server > Enter IP & Port 56048.</p>
             </div>
         </div>
     </div>
 
+    <div class="card">
+        <h2>Server Rules</h2>
+        <div class="rule-item">No Hacking / Cheating</div>
+        <div class="rule-item">No Abusing Glitches</div>
+        <div class="rule-item">No Duplication Glitches</div>
+        <div class="rule-item">No X-Ray</div>
+        <div class="rule-item">No Hacking Texture Packs</div>
+    </div>
+
     <div class="card" style="text-align: center;">
         <h2>Server Offline?</h2>
+        <p>If the server is not online, you can start it yourself here:</p>
         <a href="https://falixnodes.net/startserver?ip=catfishsmp.falixsrv.me" target="_blank" class="action-btn start-btn">Start Server</a>
     </div>
 </div>
